@@ -46,7 +46,7 @@ class Member {
 
     public function borrowBook(Book $book) {
         if ($book->borrowBook()) {
-            echo "{$this->name} borrowed '{$book->getTitle()}'\n";
+            return;
         } else {
             echo "Sorry, '{$book->getTitle()}' is not available for borrowing.\n";
         }
@@ -64,6 +64,7 @@ $book2 = new Book("To Kill a Mockingbird", 3);
 
 $member1 = new Member("John Doe");
 $member2 = new Member("Jane Smith");
+
 
 $member1->borrowBook($book1);
 
